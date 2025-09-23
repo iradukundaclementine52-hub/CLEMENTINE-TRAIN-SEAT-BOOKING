@@ -1,0 +1,128 @@
+
+Project 33: Train Seat Booking – Algorithmic Documentation
+
+
+1. Integers Section
+Code used:
+    coach_bookings = [45, 38, 50, 29, 60]
+    total_bookings = sum(coach_bookings)
+    average_bookings = total_bookings / len(coach_bookings)
+    min_bookings = min(coach_bookings)
+    max_bookings = max(coach_bookings)
+
+Algorithmic Process:
+1. Start with a list of integers (coach_bookings) that represent the number of seats booked in each coach.
+   Example: [45, 38, 50, 29, 60]
+2. Compute the total number of bookings by summing all elements.
+3. Compute the average bookings per coach by dividing the total by the number of coaches.
+4. Find the minimum value (lowest booking) in the list.
+5. Find the maximum value (highest booking) in the list.
+6. Results are stored for use in reporting.
+
+
+2. Strings Section
+Code used:
+    report = f"""
+    Train Seat Booking Report
+    Total Bookings   : {total_bookings}
+    Average Bookings : {average_bookings:.2f}
+    Minimum Bookings : {min_bookings}
+    Maximum Bookings : {max_bookings}
+    """
+    print(report)
+
+Algorithmic Process:
+1. Create a multi-line formatted string (f-string).
+2. Insert calculated values (total, average, min, max) inside the string.
+3. Format the average with two decimal places (.2f).
+4. Print a clear report that summarizes seat bookings in text format.
+
+
+3. Booleans Section
+Code used:
+    threshold = 40
+    if average_bookings > threshold and max_bookings > 50:
+        print("Status: Above Standard\n")
+    else:
+        print("Status: Below Standard\n")
+
+Algorithmic Process:
+1. Set a threshold value (40).
+2. Compare:
+   - If the average bookings > threshold (40)
+   - AND the maximum bookings > 50
+   - Then print "Above Standard".
+3. Otherwise, print "Below Standard".
+4. This uses a compound boolean condition (AND).
+
+
+4. Lists Section
+Code used:
+    seat_list = ["Coach-A", "Coach-B", "Coach-C", "Coach-D"]
+    print("Original List:", seat_list)
+    seat_list.append("Coach-E")
+    if "Coach-B" in seat_list:
+        seat_list.remove("Coach-B")
+    seat_list.sort()
+    print("Modified & Sorted List:", seat_list, "\n")
+
+Algorithmic Process:
+1. Create a list of coach names.
+   Example: ["Coach-A", "Coach-B", "Coach-C", "Coach-D"]
+2. Print the original list.
+3. Append a new coach "Coach-E".
+4. Check if "Coach-B" exists in the list.
+   - If found, remove it.
+5. Sort the list alphabetically using .sort().
+6. Print the modified and sorted list.
+
+
+5. Arrays Section
+Code used:
+    booking_array = array.array("i", [45, 38, 50])
+    array_sum = sum(booking_array)
+    list_sum = sum(coach_bookings)
+    print("Array Elements:", booking_array.tolist())
+    print("Array Sum:", array_sum)
+    print("List Sum (All Coaches):", list_sum, "\n")
+
+Algorithmic Process:
+1. Import Python’s built-in array module.
+2. Create an array of integers with a fixed size subset of bookings.
+   Example: [45, 38, 50]
+3. Compute the sum of the array values.
+4. Compute the sum of the entire bookings list (for comparison).
+5. Print both the array elements and the sums.
+6. This demonstrates the difference between a list (dynamic) and an array (fixed type).
+
+
+6. Dictionaries Section
+Code used:
+    records = [
+        {"id": 1, "name": "Coach-A", "value": 45},
+        {"id": 2, "name": "Coach-B", "value": 38},
+        {"id": 3, "name": "Coach-C", "value": 50},
+    ]
+
+    for record in records:
+        if record["name"] == "Coach-B":
+            record["value"] = 42
+
+    records = [r for r in records if r["name"] != "Coach-C"]
+
+    total_value = sum(r["value"] for r in records)
+
+    print("Updated Records:", records)
+    print("Total Value After Update:", total_value)
+
+Algorithmic Process:
+1. Create a list of dictionaries, where each dictionary contains:
+   - "id": unique identifier
+   - "name": coach name
+   - "value": number of seats booked
+2. Update the "value" of "Coach-B" to 42.
+3. Delete the record for "Coach-C" by filtering it out of the list.
+4. Compute the total of all values across the remaining records.
+5. Print the updated list of records and the new total value.
+
+
